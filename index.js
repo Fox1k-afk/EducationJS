@@ -1,36 +1,22 @@
-let firstNum = +prompt("Choose a first number"); 
- let secondNum = +prompt("Choose a second number"); 
- let operation = prompt("Choose operation + - * / ") 
-if (operation === '+') { 
-add(`${firstNum}`,`${secondNum}`); 
-} else if (operation === '-') { 
-  min(`${firstNum}`,`${secondNum}`); 
-} else if (operation === '*') { 
-multip(`${firstNum}`,`${secondNum}`);  
-} else if (operation === '/') { 
-division(`${firstNum}`,`${secondNum}`); 
-} 
-  
-  
-function add(firstNum, secondNum) { 
-  const result = Number(firstNum) + Number(secondNum) ; 
-  console.log(`${firstNum} + ${secondNum} = ${result} `); 
-} 
- 
- 
-function min(firstNum, secondNum) { 
-  const result = Number(firstNum) - Number(secondNum); 
-  console.log(`${firstNum} - ${secondNum} = ${result} `); 
-} 
- 
- 
-function multip(firstNum, secondNum) { 
-  const result = Number(firstNum) * Number(secondNum); 
-  console.log(`${firstNum} * ${secondNum} = ${result} `); 
-} 
- 
- 
-function division(firstNum, secondNum) { 
-  const result = Number(firstNum) / Number(secondNum); 
-  console.log(`${firstNum} / ${secondNum} = ${result} `); 
+function cicles() {
+	let string = '';
+	let count = 0;
+while (true) {
+	const answer = prompt('Enter some text');
+	string = string + `${answer}`;
+	count++;
+	if (count % 3 == 0) {
+		let cont = confirm('Do we continue or not?')
+		if (cont == true) {
+			continue;
+		} else {
+			alert('Game Over');
+			break;
+		}
+	}
+	console.log(string);
+	}
 }
+
+cicles();
+
