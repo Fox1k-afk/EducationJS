@@ -3,12 +3,13 @@
 function arrAdd() {
  let bank = [];
  while (true) {
-  let question = prompt("Enter some text");
-  bank.push(question);
-  console.log(bank);
-  if (!question || question === "") {
-   console.log(bank.pop());
+  const question = prompt("Enter some text");
+  if (question === null || question === "") {
+   bank.pop();
+  } else {
+   bank.push(question);
   }
+  console.log(bank);
  }
 }
 arrAdd();
@@ -62,3 +63,15 @@ arrAdd();
 // array();
 
 ////////////////////////////////////////////////////////////////////////////////////
+
+// function test() {
+//  const arr = [];
+//  while (true) {
+//   const answer = prompt("Enter ur word");
+//   if (answer === null || answer === "") {
+//    arr.pop();
+//   } else {
+//    arr.push(answer);
+//   }
+//  }
+// }
