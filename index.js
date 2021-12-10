@@ -1,23 +1,3 @@
-function cicles() {
- let string = "";
- let count = 0;
- let isConfirm = true;
- while (true) {
-  const answer = prompt("Enter some text");
-  string = string + `${answer}`;
-  if (count % 3 === 0 && count != 0) {
-   isConfirm = confirm("Do we continue or not?");
-  }
-  if (!isConfirm) {
-   break;
-  }
-  count++;
-  console.log(string);
- }
-}
-
-cicles();
-
 // function array() {
 //  let strings = [];
 //  let numbers = [];
@@ -35,7 +15,6 @@ cicles();
 //   if (count % 5 === 0 && count != 0) {
 //    isConfirm = confirm("Continue or not?");
 //   }
-
 //   if (!isConfirm) {
 //    break;
 //   }
@@ -45,3 +24,31 @@ cicles();
 //  console.log(numbers);
 // }
 // array();
+
+// START 1 TASK
+
+// function arrAdd() {
+//  let bank = [];
+//  while (true) {
+//   let question = prompt("Enter some text");
+//   bank.push(question);
+//   console.log(bank);
+//   if (!question || question === "") {
+//    console.log(bank.pop());
+//   }
+//  }
+// }
+// arrAdd();
+
+// END 1 TASK
+
+// START 2 TASK
+
+function hundred() {
+ let vault = [];
+ for (let i = 0; i < 65; i++) {
+  vault.push(i);
+  console.log(vault);
+ }
+}
+hundred();
