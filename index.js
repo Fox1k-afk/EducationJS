@@ -1,30 +1,3 @@
-// function array() {
-//  let strings = [];
-//  let numbers = [];
-//  let count = 0;
-//  let isConfirm = true;
-
-//  while (true) {
-//   let question = prompt("Choose: word or number");
-//   const isNumber = +question;
-//   if (isNaN(isNumber)) {
-//    strings.push(question);
-//   } else {
-//    numbers.push(question);
-//   }
-//   if (count % 5 === 0 && count != 0) {
-//    isConfirm = confirm("Continue or not?");
-//   }
-//   if (!isConfirm) {
-//    break;
-//   }
-//   count++;
-//  }
-//  console.log(strings);
-//  console.log(numbers);
-// }
-// array();
-
 // START 1 TASK
 
 function arrAdd() {
@@ -58,3 +31,34 @@ arrAdd();
 // hundred();
 
 // END 2 TASK
+
+// ClassWork
+
+// function array() {
+//  let strings = [];
+//  let numbers = [];
+//  let count = 0;
+//  let isConfirm = true;
+
+//  while (true) {
+//   let question = prompt("Choose: word or number");
+//   const isNumber = +question;
+//   if (isNaN(isNumber)) {
+//    strings.push(question);
+//   } else {
+//    numbers.push(question);
+//   }
+//   if (count % 5 === 0 && count != 0) {
+//    isConfirm = confirm("Continue or not?");
+//   }
+//   if (!isConfirm) {
+//    break;
+//   }
+//   count++;
+//  }
+//  console.log(strings);
+//  console.log(numbers);
+// }
+// array();
+
+////////////////////////////////////////////////////////////////////////////////////
