@@ -2,47 +2,46 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>functions</title>
-	<link rel="stylesheet" href="./style/style.css">
+	<link rel="stylesheet" href="./style/style.css" />
 	<style>
-		body {
-			height: 2000px;
-		}
-
-		.hidden {
-			overflow: hidden;
-		}
-
-		.modal {
-			position: fixed;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			background-color: rgba(0, 0, 0, .3);
+		li {
 			display: flex;
-			justify-content: center;
-			align-items: center;
+			justify-content: space-between;
 		}
 
-		.modal__content {
-			width: 400px;
-			height: 200px;
-			background-color: white;
-			border-radius: 10px;
-			padding: 10px;
+		label {
+			display: block;
+		}
+
+		.validation-message {
+			color: red;
 		}
 	</style>
 </head>
 
 <body class="body">
+	<form action="">
+		<label>
+			<input type="text" text='name' placeholder="Enter ur name">
+			<span class="validation-message"></span>
+		</label>
+		<label>
+			<textarea name="message" placeholder="Enter ur message"></textarea>
+			<span class="validation-message"></span>
+		</label>
+		<button>
+			Send
+		</button>
+		<p class="validation"></p>
+	</form>
+
 	<ul>
-		<li>1</li>
+
 	</ul>
-	<button class="btn">CLICK</button>
 	<script src="index.js"></script>
 </body>
 

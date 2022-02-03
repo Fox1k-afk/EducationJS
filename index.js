@@ -273,44 +273,117 @@
 // link.classList.add("testClass");
 // link.style.color = "red";
 
-const button = document.querySelector(".btn");
+// const button = document.querySelector(".btn");
 
-function toggleScrollbar() {
- document.body.classList.toggle("hidden");
-}
+// function toggleScrollbar() {
+//  document.body.classList.toggle("hidden");
+// }
 
-function showModal(text) {
- const wrapperElem = document.createElement("div");
- wrapperElem.classList.add("modal");
- const contentElem = document.createElement("div");
- contentElem.classList.add("modal__content");
- const textElem = document.createElement("p");
- textElem.innerText = text;
- const buttonElem = document.createElement("button");
- buttonElem.innerText = "Close";
- buttonElem.addEventListener("click", () => {
-  closeModal(wrapperElem);
-  toggleScrollbar();
- });
- wrapperElem.addEventListener("click", () => {
-  closeModal(wrapperElem);
- });
- contentElem.append(textElem);
- wrapperElem.append(contentElem);
- contentElem.append(buttonElem);
+// function showModal(text) {
+//  const wrapperElem = document.createElement("div");
+//  wrapperElem.classList.add("modal");
+//  const contentElem = document.createElement("div");
+//  contentElem.classList.add("modal__content");
+//  const textElem = document.createElement("p");
+//  textElem.innerText = text;
+//  const buttonElem = document.createElement("button");
+//  buttonElem.innerText = "Close";
+//  buttonElem.addEventListener("click", () => {
+//   closeModal(wrapperElem);
+//   toggleScrollbar();
+//  });
+//  wrapperElem.addEventListener("click", () => {
+//   closeModal(wrapperElem);
+//  });
+//  contentElem.append(textElem);
+//  wrapperElem.append(contentElem);
+//  contentElem.append(buttonElem);
 
- document.body.append(wrapperElem);
- toggleScrollbar();
- //  setTimeout(() => {
- //   wrapperElem.remove();
- //   toggleScrollbar();
- //  }, 5000);
-}
+//  document.body.append(wrapperElem);
+//  toggleScrollbar();
+//  //  setTimeout(() => {
+//  //   wrapperElem.remove();
+//  //   toggleScrollbar();
+//  //  }, 5000);
+// }
 
-function closeModal(elem) {
- elem.remove();
- toggleScrollbar();
-}
-button.addEventListener("click", () => {
- showModal("Alert");
+// function closeModal(elem) {
+//  elem.remove();
+//  toggleScrollbar();
+// }
+// button.addEventListener("click", () => {
+//  showModal("Alert");
+// });
+
+// function Option(text, value, defaultSelected, selected) {
+//  const option = document.createElement("option");
+//  option.innerText = text;
+//  option.value = value;
+//  option.defaultSelected = defaultSelected;
+//  option.selected = selected;
+//  return option;
+// }
+
+// const inputEmail = document.querySelector('[name=email]');
+// const validationMessage = document.querySelector('.validation-message');
+
+// function validateEmail(element) {
+// 	if (!element.value.includes('@')) {
+// 		validationMessage.innerText = 'Invalid email';
+// 		element.classList.add('error');
+// 	} else {
+// 		validationMessage.innerText = '';
+// 		element.classList.remove('error');
+// 	}
+// }
+
+// inputEmail.addEventListener('blur', function (event) {
+// 	validateEmail(this);
+
+// 	this.addEventListener('input', function () {
+// 		validateEmail(this);
+// 	});
+// });
+
+const messageForm = document.forms[0];
+const inputName = messageForm.elements.name;
+const inputMessage = messageForm.elements.message;
+
+messageForm.addEventListener('submit', function (event) {
+	event.preventDefault();
+
+	if (isValidForm()) {
+		insertMessage(inputName.value, inputMessage.value);
+		inputName.value = '';
+		inputMessage.value = '';
+	}
 });
+
+function isValidForm() {
+	const validationMessages = document.querySelectorAll('.validation-message');
+	const messages = [];
+	validationMessages.forEach((item) => messages.push(item));
+	return messages.every((item) => !item.innerText);
+}
+
+function validateLength(elem, length) {
+	return function () {
+		const messageElement = elem.closest('label').children[1];
+
+		if (elem.value.length < length) {
+			messageElement.innerText = `The lenght of name should be bigger than ${length}`;
+		} else {
+			messageElement.innerText = '';
+		}
+	};
+}
+inputName.addEventListener('change', validateLength(inputName, 2));
+inputMessage.addEventListener('change', validateLength(inputMessage, 5));
+
+function insertMessage(name, text) {
+	const listElem = document.getElementsByTagName('ul')[0];
+	const liElem = document.createElement('li');
+
+	liElem.innerHTML = `<div>${name}:</div> <div>${text}</div>`;
+	listElem.append(liElem);
+}
